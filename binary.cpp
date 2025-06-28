@@ -68,39 +68,56 @@ Add constraints like:
  
 using namespace std;
 
+class Machine
+{
+private:
+int units;
+bool isworking= true;
+
+};
+
 int main()
 {
 int no_ofmachines;
-int units_perday[5]={};
+int units_perday[20]={};
 int days_forproduction;
 int load;
+int total=0;
 
 //user input on the number of machines available for production process
-cout<<"How many machines are to be used for this operation";
+cout<<"How many machines are to be used for this operation  ";
 cin>> no_ofmachines;
 
 //information on the units each machines produces per day
 cout << "For the different machines, what are their production of units per day\n";
-int i=0;
-for (i=0;i<no_ofmachines;i++)
+int i=1;
+for (i=1;i<=no_ofmachines;i++)
 {
     cout<< "speed for machine  "<<i<<" = ";
     cin >> units_perday[i];
+    
+    total+=units_perday[i];
 }
 
+   
 // display on the machines with the units they produce per day
-int j= 0;
+int j= 1;
 while(j<=no_ofmachines)
 {
     cout<<"machine"<<j<<"\t-\t"<<units_perday[j]<<"\n";
     j++;
 }
+// display of units produced in a day by all the machines involved for production
+ cout<<"The number of units in a day are"<<total<<"\n";
 
 // operators input on the load required to be produced
-cout <<"How many units are expected to be produced";
+cout <<"How many units are expected to be produced\n";
 cin >> load;
 
-//calculation on the number of days it will take for the load to be produced
+//calculation on the number of input the production will take;
+
+days_forproduction= (load/total);
+cout<<days_forproduction <<"Days ";
 
 
 
