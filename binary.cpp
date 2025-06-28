@@ -72,7 +72,45 @@ class Machine
 {
 private:
 int units;
+int speed;
 bool isworking= true;
+string response;
+int machine_option;
+
+public:
+
+// checkup on the machine working status;
+void machinestatus()
+{ 
+    cout<<"Is the machine in perfect condition. Kindly carry out inspection operation.(Type Yes or No)";
+    cin>> response;
+    if(response=="Yes")
+    {
+      isworking= true; 
+      cout<<"Machine is ready for work"; 
+    }
+    else 
+    {
+        isworking = false;
+        cout<<"The machine cannot be used for production today. Please check its maintenance";
+    }
+}
+
+//input on machine speed in terms of production of units
+
+void machine_speed()
+{
+cout<<"Machine speed in units per day ";
+cin >> speed;
+
+}
+//input on the machines special condition
+void Machine_working()
+{
+cout<<" Does the machine has special working conditions worth noting.\n Options viable.\n 1. It is okay. Runs throughout without stopping\n 2. Runs for three days then stops./n 3. Requires cooling after every 8 hours";
+cin >> machine_option;
+}
+
 
 };
 
